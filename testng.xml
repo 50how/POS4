@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite"  parallel="classes" thread-count="10"><!--parallel="false",parallel="methods"-->
+    <test name="Test" preserve-order="true">
+        <groups>
+            <dependencies>
+                <group name="others" depends-on="login"></group>
+            </dependencies>
+        </groups>
+        <classes>
+            <class name="Po.LoginTest"/>
+            <class name="Po.KnowledgeTest"/>
+
+
+        </classes>
+
+
+    </test>
+    <listeners>
+
+        <!--Allure 监听截图-->
+        <!--<listener class-name="Base.TestFailListener" />-->
+
+        <!--重试-->
+        <!--<listener class-name="Base.RetryListener" />-->
+    </listeners>
+</suite>
